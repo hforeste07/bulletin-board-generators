@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :listings
   # Routes for the Board resource:
 
   # CREATE
