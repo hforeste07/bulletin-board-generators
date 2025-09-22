@@ -10,6 +10,18 @@
 
     <%= yield :head %>
 
+    <!-- The official Pico CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.conditional.css">
+
+    <!-- The official Bootstrap utilities stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/css/bootstrap-utilities.css">
+
+    <!-- Our modifications to default Pico CSS styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/firstdraft/pico.firstdraft.css@latest/pico.firstdraft.css">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
@@ -22,7 +34,27 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body calss="pico">
+    <div class="container-two-thirds">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/"><strong>Bulletin Board</strong></a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="container-two-thirds">
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+
+    <div class="container-two-thirds">
+      <footer>
+        <p></p>
+      </footer>
+    </div>
   </body>
 </html>
