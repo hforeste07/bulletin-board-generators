@@ -35,8 +35,8 @@
   </head>
 
   <body calss="pico">
-    
-      <header>
+
+    <header>
       <div class="container-two-thirds">
         <nav>
           <ul>
@@ -44,11 +44,10 @@
           </ul>
         </nav>
       </div>
-      </header>
+    </header>
 
-
-    
-      <main>
+    <main>
+      <div class="container-two-thirds">
         <div class="text-success">
           <%= notice %>
         </div>
@@ -56,17 +55,15 @@
         <div class="text-danger">
           <%= alert %>
         </div>
-
-      <div class="container-two-thirds">
+        
         <%= yield %>
-    </div>
-</main>
+      </div>
+    </main>
 
-    
-      <footer class="text-cernter">
+    <footer class="text-cernter">
 
-        <p></p>
-      </footer>
+      <p></p>
+    </footer>
 
   </body>
 </html>
