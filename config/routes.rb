@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get("/", { :controller => "boards", :action => "index" })
+
   resources :listings
   # Routes for the Board resource:
 
