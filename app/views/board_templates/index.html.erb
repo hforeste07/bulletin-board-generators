@@ -1,17 +1,28 @@
-<h1>
-  List of all boards
-</h1>
-
-<hr>
-
+<nav aria-label="breadcrumb">
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+</nav>
+  
 <article>
-  <header>
-    <h2>
-      Add a new board
-    </h2>
-  </header>
+<header>
+All Boards
+</header>
+  <ul>
+    <% @list_of_boards.each do |a_board| %>
+      <li>
+        <a href="/boards/<%= a_board.id %>">
+          <%= a_board.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 
-  <form action="/insert_board" method="post">
+</article>
+<header>
+Add a board
+</header>
+<form action="/insert_board" method="post">
     <div>
       <label for="name_box">
         Name
@@ -25,19 +36,3 @@
     </button>
   </form>
 </article>
-
-<hr>
-
-<article>
-  <ul>
-    <% @list_of_boards.each do |a_board| %>
-      <li>
-        <a href="/boards/<%= a_board.id %>">
-          Board #<%= a_board.id %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
-</article>
-
-<hr>
