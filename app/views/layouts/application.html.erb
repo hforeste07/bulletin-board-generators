@@ -35,26 +35,38 @@
   </head>
 
   <body calss="pico">
-    <div class="container-two-thirds">
+    
       <header>
+      <div class="container-two-thirds">
         <nav>
           <ul>
             <li><a href="/"><strong>Bulletin Board</strong></a></li>
           </ul>
         </nav>
+      </div>
       </header>
-    </div>
 
-    <div class="container-two-thirds">
+
+    
       <main>
-        <%= yield %>
-      </main>
-    </div>
+        <div class="text-success">
+          <%= notice %>
+        </div>
 
-    <div class="container-two-thirds">
+        <div class="text-danger">
+          <%= alert %>
+        </div>
+
+      <div class="container-two-thirds">
+        <%= yield %>
+    </div>
+</main>
+
+    
       <footer class="text-cernter">
+
         <p></p>
       </footer>
-    </div>
+
   </body>
 </html>
